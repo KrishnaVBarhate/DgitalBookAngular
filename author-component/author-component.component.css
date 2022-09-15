@@ -1,0 +1,224 @@
+* {box-sizing: border-box;}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.author-container{
+  max-width: 500px;
+  margin: auto;
+  font-size: 17px;
+  font-family: Arial, Verdana, sans-serif;
+
+}
+#imageonly {
+  background: url(https://th.bing.com/th/id/OIP.Wqjdu89w06exwaMIxpmpEgHaC2?w=337&h=134&c=7&r=0&o=5&pid=1.7);
+}
+
+#linear-gradient {
+  background: linear-gradient(rgba(140, 27, 185, 0.233), rgba(117, 234, 255, 0.247));
+}
+/* Style the navbar */
+.topnav {
+  overflow: hidden;
+  background-color: hsl(291, 6%, 78%);
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: Arial, Verdana, sans-serif;
+}
+
+/* Navbar links on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  
+ 
+  
+}
+
+/* Active/current link */
+.topnav a.active {
+  background-color: #540b66;
+  color: white;
+}
+
+/* Style the input container */
+.topnav .login-container {
+  float: right;
+color:#0b4474;
+
+text-align: center;
+font-family: Arial, Verdana, sans-serif;
+
+}
+.topnav .login {
+    float: right;
+    color:#540b66;
+  
+  }
+  
+
+/* Style the input field inside the navbar */
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 150px; /* adjust as needed (as long as it doesn't break the topnav) */
+}
+
+/* Style the button inside the input container */
+.topnav .login-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+Button{
+  padding: 6px;
+  margin-top: 4px;
+  margin-right: 16px;
+  margin-left: 16px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .login-container button:hover {
+  background: #ccc;
+}
+
+
+/* Add responsiveness - On small screens, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 600px) {
+  .topnav .login-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .login-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #ccc;
+  }
+  .navbar-brand {
+    padding: 14px 20px;
+    font-size: 16px;
+}
+}
+
+tr:hover {background-color: rgb(131, 77, 182);}
+th, td {
+  padding: 15px;
+  text-align: left;
+  /* tr:hover {background-color: coral;} */
+}
+table{
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid;
+  text-align: center;
+  padding: 15px;
+}
+
+.input-css {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #5fc9ef;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  font: normal 14px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #d5dbdd;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.enjoy-css {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 1px solid #5fc9ef;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  font: normal 14px/normal Arial, Helvetica, sans-serif;
+  color: rgba(255,255,255,0.9);
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #0199d9;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) ;
+  text-shadow: -1px -1px 0 rgba(15,73,168,0.66) ;
+  -webkit-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -moz-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  -o-transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+  transition: all 300ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+.topcorner{
+  position:absolute;
+  top: 123px;
+  right: 40px;
+  font-size: 30px;
+  
+  font-family: Arial, Verdana, sans-serif;
+ }
+
+ .content{
+  position:absolute;  
+  top: 200px;
+  right:400px;
+  font-size: 20px;
+}
+
+ .css-input {
+  padding: 8px;
+  font-size: 15px;
+  border-width: 1px;
+  border-color: #CCCCCC;
+  background-color: #FFFFFF;
+  color: #000000;
+  border-style: solid;
+  border-radius: 12px;
+  box-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  
+}
+
+.label-css{
+  font-size: 20px;
+  
+  font-family: Arial, Verdana, sans-serif;
+}
+

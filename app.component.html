@@ -1,0 +1,73 @@
+<head >
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'> 
+</head>
+  <div class="topnav">
+  <a routerLink="/Home" routerLinkActive="active" ariaCurrentWhenActive="page" ><i class="fa fa-fw fa-book"></i> Digital Books</a>
+  <div class="topnav-right">
+      <a routerLink="/signup" [hidden]="IsLogout" routerLinkActive="active" ariaCurrentWhenActive="page"><i class="fa fa-fw fa fa-plus-square"></i>Signup</a>   
+      <a routerLink="/login" [hidden]="IsLogout" routerLinkActive="active" ariaCurrentWhenActive="page"><i class="fa fa-user"></i>Login</a> 
+      <a routerLink="/login" [hidden]="!IsLogout" routerLinkActive="active" ariaCurrentWhenActive="page"><i class="fa fa-power-off"></i>Logout</a>   
+      <a>{{userFirst}}</a>
+  </div>
+  
+</div>
+
+
+<!-- 
+        <head >
+          <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'> 
+        </head>
+        <body id="linear-gradient">
+          <div class="topnav">
+            
+            <nav>
+              <tr>
+                
+                &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
+                <a routerLink="/Home" routerLinkActive="active" ariaCurrentWhenActive="page" ><i class="fa fa-fw fa-book"></i> Digital Books</a>
+                &nbsp; &nbsp; &nbsp;
+                <div class="login-container">
+                <th>
+                  
+                 
+                  <div>
+                    <a routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page"><i class="fa fa-fw fa-plus"></i>Signup</a>   
+                    &nbsp; &nbsp; &nbsp;
+                  </div>
+                </div>
+                  <th>
+                    <div>
+                      <a routerLink="/login" [hidden]="!IsLogout" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>   &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </th>
+                  <th>
+                    <div>
+                      <a button="/logout" [hidden]="IsLogout"  (click)="Onlogout()" >Logout</a> &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </th> -->
+
+
+
+                 
+                  <!-- <th>
+                    <div>
+                      <a routerLink="/author" [hidden]="!IsAuthormoduleshow" routerLinkActive="active" ariaCurrentWhenActive="page">Author</a>   &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </th>
+                  <th>
+                    <div>
+                      <a routerLink="/reader" [hidden]="!IsUsermoduleshow" routerLinkActive="active" ariaCurrentWhenActive="page">Reader</a>   &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </th> -->
+
+
+
+
+                  
+                <!-- </tr>
+                
+              </nav>
+            </div>
+          </body> -->
+          
+          <router-outlet></router-outlet>

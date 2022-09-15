@@ -1,0 +1,33 @@
+<body id="linear-gradient" style="height: 580px;">
+
+<div class="center" >
+  <h1>Please enter credentials.</h1>
+    <div class="Signup-form">
+       <form #form="ngForm"(ngSubmit)="onSubmit()" ><!-- -->
+        <br>
+        <div class="form-group">
+          <label class='label-css' for="">User Name</label><br><br>
+          <input class='css-input' placeholder='Enter username' type="text" name="userName" [(ngModel)]="user.userName">
+        </div>
+        
+          <br>
+         <div class="form-group">
+            <label class='label-css' for="">Password</label><br><br>
+            <input class='css-input' placeholder='Enter Password' type="password" name="userpassword" [(ngModel)]="user.userpassword">
+          </div>
+          <br>
+         <div class="form-group" >
+          <button class='enjoy-css'>Login</button>
+          <button class='enjoy-css'(click)="home()">Proceed as a Guest</button>
+        </div>
+      
+      </form>
+    
+    </div>
+  
+    
+   
+   
+    
+
+

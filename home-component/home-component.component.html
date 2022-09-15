@@ -1,0 +1,94 @@
+
+ <body id="linear-gradient" style="height: 610px;">
+    <div class="Sbook-container" >
+        <div class="Sbook-form">
+           <form #form="ngForm"(ngSubmit)="onSubmit()" ><!-- -->
+            <br>
+            <div class="form-group">
+              <label class='label-css' for="">Book Name</label><br>
+              <input type="text" class='css-input' name="bookName" [(ngModel)]="book.bookName">
+            </div>
+            <br>
+            <div class="form-group">
+              <label class='label-css' for="">Author</label><br>
+              <input type="text" class='css-input' name="Author" [(ngModel)]="user.userName">
+            </div>
+            <br>
+            <div>
+                <label class='label-css' for="">Publisher</label><br>
+                <input type="text" class='css-input' name="publisher" [(ngModel)]="book.publisher">
+              </div>
+              <br>
+              <div>
+                <label class='label-css' for="">Date of Publish</label><br>
+                <input class='css-input' type="date" name="publishdate" [(ngModel)]="book.publishdate">
+              </div>
+              <br>
+            
+            <div class="form-group">
+              <button class='enjoy-css'>Search</button>
+            </div>
+          
+          </form>
+        </div>
+        
+        <div class="book-grid" *ngIf="books.length>0" else #BookNotFound >
+          <div class="book-row">
+             <div class="book-row-details"  >
+                  <table class="table table-bordered">
+                      <thead>
+                          <th>Book Name</th>
+                          <th>Price</th>
+                          <th>Procced to Buy</th>
+                      </thead>
+                      <tbody *ngFor="let book of books" >
+                          <tr>
+                              <td>{{ book.bookName }}</td>
+                              <td>{{ book.price }}</td>
+                              
+                            <td>
+                              <a [routerLink]="['/purchase', book.bookId]">
+                                <button class='enjoy-css'>Buy</button>
+                              </a> 
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              
+          </div>
+        </div>
+
+         <!-- <div class="book-grid" *ngIf="searchResult.length>0" else #BookNotFound >
+          <div class="book-row">
+             <div class="book-row-details"  >
+                  <table class="table table-bordered">
+                      <thead>
+                          <th>Book Name</th>
+                          <th>Price</th>
+                          <th>Procced to Buy</th>
+                      </thead>
+                      <tbody *ngFor="let book of books" >
+                          <tr>
+                              <td>{{ searchResult.bookName }}</td>
+                              <td>{{ searchResult.price }}</td>
+                              
+                            <td>
+                              <a [routerLink]="['/purchase', book.bookId]">
+                                <button>Buy</button>
+                              </a> 
+                            </td>
+                          </tr>
+                      </tbody>
+                  </table>
+              </div>
+              
+          </div>
+        </div>  -->
+        <ng-template #BookNotFound>
+          <h3>book not found</h3>
+      </ng-template>
+
+      
+  
+

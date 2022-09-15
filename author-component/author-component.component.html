@@ -1,0 +1,116 @@
+<style>
+  .comment {
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    
+   
+  }</style>
+<body id="linear-gradient">
+
+  <div class="grid-container">
+    
+    <div class="author-container" >
+      <div class="grid-child-purple">
+        <div class="Signup-form">
+          <form #form="ngForm"(ngSubmit)="onSubmit()" ><!-- -->
+            <br>
+            <div class="form-group">
+              <div class="topcorner">Hi,{{userFirst}}</div>
+              <div class="content"> 
+                <!-- <input class='css-input' type="text" name="publishdate" [(ngModel)]="bookcontent"> -->
+                <textarea class="comment" name="paragraph_text" cols="50" rows="10" [(ngModel)]="bookcontent"></textarea>
+                </div>
+              <h1>Publish & Manage your Books</h1>
+              <label class="label-css"for="">Book Name</label><br>
+              <input class="css-input" type="text" name="bookName" [(ngModel)]="book.bookName">
+            </div>
+            <br>
+            <div><th>
+              <label class="label-css"for="">Category</label>  &nbsp;
+              <select style="position: relative;width: 100px;"  [(ngModel)]="obj" name="demo" id="#">
+                <option selected="selected" value="Fiction">Fiction</option>
+                <option value="Comic">Comic</option>
+                <option value="Fantasy">Fantasy</option></select></th>
+              </div>
+              <br>
+              <div>
+                <label class="label-css"for="">Price </label><br>
+                <input class="css-input" type="text" name="price" [(ngModel)]="book.price">
+              </div>
+              <br>
+              <!-- <div>
+                <label for="">Author </label><br>
+                <input type="text" name="userId" [(ngModel)]="user.userName">
+              </div> -->
+              
+              <div>
+                <label class="label-css"for="">Publisher</label><br>
+                <input  class="css-input"  type="text" name="publisher" [(ngModel)]="book.publisher">
+              </div>
+              
+              <br>
+              <div>
+                <label class="label-css"for="">Content</label><br>
+                <input class="css-input" type="text" name="content" [(ngModel)]="book.content">
+              </div>
+              <br>
+              
+              
+              <div class="form-group" > <!-- *ngIf="user.emailId !=''" -->
+                <button class="enjoy-css">Add Book</button>
+              </div>
+            </form>
+          </div> 
+          <div class="grid-child green">
+            <div class="book-grid"  >
+              <div class="book-row">
+                <div class="book-row-details"  >
+                  <table  width=100%>
+                    <thead>
+                      <th>Book Name</th>
+                      <th>Price</th>
+                      <th>Status</th>
+                      <th>Active/Deactive</th>
+                      <th>Read</th>
+                    </thead>
+                    <tbody *ngFor="let book of searchResult" >
+                      <tr>
+                        <td>{{ book.bookName }}</td>
+                        <td>{{ book.price }}</td>
+                        <td><a *ngIf="book.active == true">Active</a>
+                          <a *ngIf="book.active == false">Inactive</a>
+                        </td>
+                        <td>
+                        <button class="enjoy-css"  (click)="deactivatebook(book.bookId)">Change Availability</button>
+                      </td>
+                    <td>
+                        <button class="enjoy-css"  (click)="read(book)">Read</button>
+                      </td>
+                      <td>
+                        <button class="enjoy-css"  (click)="update(book.bookId,bookcontent)">Update</button>
+                      </td>
+                        
+                        
+                        
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- <ng-template #elseBlock>
+                 
+                </ng-template> -->
+              </div>
+            </div>
+            </div>
+            
+            
+          </div>
+          
+          
+      </div>
+      
+    </div>    
+    
+    

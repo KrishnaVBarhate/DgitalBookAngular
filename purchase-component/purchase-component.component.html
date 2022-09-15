@@ -1,0 +1,69 @@
+<body id="linear-gradient" style="height: 610px;">
+<div class="Signup-container" >
+    <div class="Signup-form">
+      <p class='label-css' >Please enter below details to Purchase the book.</p>
+    </div>
+       <form class='center' #form="ngForm"(ngSubmit)="onSubmit()" >
+        
+         
+       
+         <div class="form-group">
+            <label class='label-css' for="">Email Id</label><br><br>
+            <input class='css-input' type="text" name="email" placeholder='Enter your e-mail'[(ngModel)]="purchase.emailId">
+          </div>
+          <br>
+          <div>
+            <label class='label-css' for="">Payment Mode</label><br><br>
+            <input class='css-input' required type="text" name="mode" placeholder='Enter Payment Mode'[(ngModel)]="purchase.paymentMode">
+          </div>
+          
+            <br>
+         <div class="form-group" >
+          <button class='enjoy-css'>Confirm purchase</button>
+          <button class='enjoy-css'(click)="loadpur(purchase.emailId)">Purchase History</button>
+        </div>
+        
+        
+      </form>
+      
+      <!-- <tbody  *ngFor="let pur of searchResult " >
+                    
+        <tr >
+            <td>{{ pur.price }}</td>
+            <td>{{ pur.book?.bookName}}</td>
+            <td>{{ pur.paymentMode }}</td>
+            <td>{{ pur.purchaseDate |date:'longDate' }}</td>
+            
+        </tr>
+    
+    </tbody> -->
+    <div class="book-grid"  *ngIf="searchResult.length>0" style="padding: 330px;;" >
+      <div class="book-row">
+         <div class="book-row-details"  >
+              <table class="table table-bordered">
+                  <thead>
+                      <th>Book Name</th>
+                      <th>Price</th>
+                      <th>Payment Mode</th>
+                      <th>Date of Purchase</th>
+                  </thead>
+                  <tbody *ngFor="let pur of searchResult " >
+                      <tr>
+                        <td>{{ pur.book?.bookName}}</td>
+                        <td>{{ pur.book?.price}}</td>
+                        <td>{{ pur.paymentMode }}</td>
+                        <td>{{ pur.purchaseDate |date:'longDate' }}</td>
+                          
+                      
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+          
+      </div>
+    </div>
+
+ 
+    </div> 
+
+
