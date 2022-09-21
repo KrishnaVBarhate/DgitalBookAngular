@@ -22,6 +22,8 @@
           <button class='enjoy-css'>Confirm purchase</button>
           <button class='enjoy-css'(click)="loadpur(purchase.emailId)">Purchase History</button>
         </div>
+        <br>
+        <div style="color: green;"> {{bdisplay}}</div>
         
         
       </form>
@@ -37,7 +39,9 @@
         </tr>
     
     </tbody> -->
-    <div class="book-grid"  *ngIf="searchResult.length>0" style="padding: 330px;;" >
+    <br>
+    <br>
+    <div class="book-grid"  *ngIf="searchResult.length>0" style="padding: 330px;height: 400px;" >
       <div class="book-row">
          <div class="book-row-details"  >
               <table class="table table-bordered">

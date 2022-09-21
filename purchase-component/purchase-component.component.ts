@@ -35,7 +35,7 @@ export class PurchaseComponentComponent implements OnInit {
     publishdate:'',
     content:'',
     active:true,
-    usermodel:this.user
+    user:this.user
   }
   purchases:purchase[]=[];
   purchase:purchase={
@@ -51,6 +51,8 @@ export class PurchaseComponentComponent implements OnInit {
   bid:any;
   searchResult:any;
   bResult:string='';
+  bdisplay:string='';
+  bookinfo:any ;
   constructor(private BooksSvc:BooksService, private route:ActivatedRoute,private Appcomp:AppComponent) { }
   
   ngOnInit(): void {
@@ -75,7 +77,9 @@ export class PurchaseComponentComponent implements OnInit {
     purchases.book=null;
     this.BooksSvc.addPurchase(purchases)
     .subscribe(
-      response => { this.purchase;console.log(this.purchase); this.loadhistory(this.purchase);alert('Purchase Successful');}
+      response => { this.purchase;console.log(this.purchase); this.loadhistory(this.purchase);
+        //this.bookinfo=this.purchase.book?.bookName;
+        this.bdisplay="The Book Purchased Successfully,Thank You"}
 
       );
   }

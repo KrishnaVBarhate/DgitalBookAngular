@@ -6,6 +6,7 @@ import { User } from '../Models/user';
 import { Category } from '../Models/category';
 import { Router } from '@angular/router';
 import { Book } from '../Models/bookmodel';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-author-component',
@@ -26,6 +27,7 @@ export class AuthorComponentComponent implements OnInit {
     active:true
   }
   obj='';
+  bdisplay:string='';
   categories:Category[]=[];
   category:Category={
     categoryId:0,
@@ -75,12 +77,13 @@ export class AuthorComponentComponent implements OnInit {
   userFirst:string='';
   searchResult:any;
   bookcontent:string='';
-  constructor(private BooksSvc:BooksService,private router:Router) { }
+  constructor(private BooksSvc:BooksService,private router:Router,private AppComp:AppComponent) { }
 
   ngOnInit(): void {
     this.getAllUsers();
     this.GetUserID();
     this.loadBooks();
+    this.AppComp.IsLogout=true;
     
   }
 
@@ -146,6 +149,7 @@ export class AuthorComponentComponent implements OnInit {
     read(book:Book)
     {
       this.bookcontent=book.content;
+      this.bdisplay="";
     }
   
   deactivatebook(id:number){
@@ -153,6 +157,7 @@ export class AuthorComponentComponent implements OnInit {
     this.BooksSvc.deactivatebook(id).subscribe(
       response =>{
         this.loadBooks()
+        this.bdisplay="";
       }
     );
 
@@ -163,7 +168,7 @@ export class AuthorComponentComponent implements OnInit {
     this.BooksSvc.updatebook(id,content).subscribe(
       response =>{
         this.loadBooks();
-        alert('Book content Updated');
+        this.bdisplay="The book has been updated";
       }
     );
   }

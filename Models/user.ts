@@ -23,3 +23,16 @@ export interface Useri
     active:boolean;
 
 }
+
+export interface Userl
+{
+    userName:string | null;
+    emailId:string;
+    firstName:string;
+    lastName:string;
+    userpassword:string |null;
+    roleId:string;
+    active:boolean;
+
+
+}

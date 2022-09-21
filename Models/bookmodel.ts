@@ -26,7 +26,7 @@ export interface Booki
     publishdate:string;
     content:string;
     active:boolean;
-    usermodel:User;
+    user:User;
 
 }
 

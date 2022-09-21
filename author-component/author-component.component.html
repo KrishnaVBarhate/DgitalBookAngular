@@ -20,6 +20,7 @@
               <div class="content"> 
                 <!-- <input class='css-input' type="text" name="publishdate" [(ngModel)]="bookcontent"> -->
                 <textarea class="comment" name="paragraph_text" cols="50" rows="10" [(ngModel)]="bookcontent"></textarea>
+                <div style="color:rgb(7, 90, 5);">{{bdisplay}}</div>
                 </div>
               <h1>Publish & Manage your Books</h1>
               <label class="label-css"for="">Book Name</label><br>
@@ -78,8 +79,8 @@
                       <tr>
                         <td>{{ book.bookName }}</td>
                         <td>{{ book.price }}</td>
-                        <td><a *ngIf="book.active == true">Active</a>
-                          <a *ngIf="book.active == false">Inactive</a>
+                        <td><a *ngIf="book.active == true" style="color:rgb(8, 110, 8);">Active</a>
+                          <a *ngIf="book.active == false" style="color:red;">Inactive</a>
                         </td>
                         <td>
                         <button class="enjoy-css"  (click)="deactivatebook(book.bookId)">Change Availability</button>

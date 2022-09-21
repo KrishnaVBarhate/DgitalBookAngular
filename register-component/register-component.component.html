@@ -1,5 +1,5 @@
 
-<body id="linear-gradient" style="height: 590px;" >
+<body id="linear-gradient" style="height: 700px;" >
 <div  >
     <div class="Signup-form">
        <form class="Signup-container" #form="ngForm"(ngSubmit)="onSubmit()" ><!-- -->
@@ -9,17 +9,26 @@
           <label class="label-css" for="">User Name</label><br>
           <input class="css-input" type="text" name="userName" [(ngModel)]="user.userName">
         </div>
+        <div class="text-danger"style="color:red;" *ngIf="user.userName==''" >
+          Username is mandatory.
+        </div> 
         <br>
         <div class="form-group">
           <label class="label-css" for="">Email ID</label><br>
           <input  class="css-input"type="text" name="emailId" [(ngModel)]="user.emailId" >
           
         </div>
+        <div class="text-danger"style="color:red;" *ngIf="user.emailId==''" >
+          Email ID is mandatory.
+        </div> 
         <br>
         <div>
             <label class="label-css" for="">First Name</label><br>
             <input  class="css-input" type="text" name="firstName" [(ngModel)]="user.firstName">
           </div>
+          <div class="text-danger"style="color:red;" *ngIf="user.firstName==''" >
+           First Name is mandatory.
+          </div> 
           <br>
           <div>
             <label class="label-css" for="">Last Name</label><br>
@@ -30,6 +39,9 @@
             <label class="label-css" for="">Password</label><br>
             <input  class="css-input" type="password" name="userpassword" [(ngModel)]="user.userpassword">
           </div>
+          <div class="text-danger"style="color:red;" *ngIf="user.userpassword==''" >
+            Password is mandatory.
+           </div> 
           <br>
           <div>
             <label class="label-css" for="">Role </label><br>
@@ -41,10 +53,10 @@
           <br>
 
         
-        <div class="form-group" *ngIf="user.emailId !=''">
+        <div class="form-group" *ngIf="user.emailId !='' && user.userName!='' && user.emailId!=''&& user.userpassword!=''&& user.firstName!=''">
           <button class="enjoy-css">Register</button>
         </div>
-      
+        <div style="color:green;" >{{bdisplay}}</div>
       </form>
     </div>
     

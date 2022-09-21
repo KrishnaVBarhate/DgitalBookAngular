@@ -25,6 +25,7 @@ export class HomeComponentComponent implements OnInit
     roleId:'',
     active:true
   }
+  booksall:any;
   books:Booki[]=[];
   book: Booki = {
   bookId:'',
@@ -36,7 +37,7 @@ export class HomeComponentComponent implements OnInit
   publishdate:'0000-00-00',
   content:'',
   active:true,
-  usermodel:this.user
+  user:this.user
 
   }
   searchResult: any;
@@ -51,20 +52,21 @@ export class HomeComponentComponent implements OnInit
   getAllBooks() {
     this.BooksSvc.getAllBooksi()
     .subscribe(
-      response => { this.books = response}
+      response => { this.booksall = response}
     );
   }
 
     onSubmit()
     {
       this.searchBook(this.book);
+     
      // this.searchBookn();
     }
 
-  searchBook(book: Booki)
+  searchBook(bookz: Booki)
   {
-    this.BooksSvc.searchBooks(book.bookName,book.usermodel.userName,book.publisher,book.publishdate).subscribe(
-      response => { this.books = response});
+    this.BooksSvc.searchBooks(bookz.bookName,bookz.user.userName,bookz.publisher,bookz.publishdate).subscribe(
+      response => { this.books = response;console.log(this.books)});
   }
 
   // searchBookn()

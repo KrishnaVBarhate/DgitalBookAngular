@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { BooksService } from '../service/books.service';
 import { Book, Booki } from '../Models/bookmodel';
 import { Useri } from '../Models/user';
+import { AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-reader-component',
@@ -38,7 +39,7 @@ export class ReaderComponentComponent implements OnInit {
   publishdate:'',
   content:'',
   active:true,
-  usermodel:this.user
+  user:this.user
 
   }
   emailID:any;
@@ -46,12 +47,14 @@ export class ReaderComponentComponent implements OnInit {
   userFirst:string="";
   
 
-  constructor(private BooksSvc:BooksService) { }
+  constructor(private BooksSvc:BooksService,private AppComp:AppComponent) { }
 
   ngOnInit(): void {
     this.GetUserID();
     //this.loadhistory();
-    this.getAllBooks();
+    //this.getAllBooks();
+    this.loadpur(this.emailID);
+    this.AppComp.IsLogout=true;
     
   }
   GetUserID(){
@@ -61,6 +64,13 @@ export class ReaderComponentComponent implements OnInit {
     this.userFirst=values.firstName;
   }
 
+
+  loadpur(email:string){
+    this.BooksSvc.getAllpurchase(email).subscribe(
+      response => {this.searchResult = response; console.log(this.searchResult);}
+      );
+
+  }
   loadhistory(){
     this.BooksSvc.getAllpurchasereader(this.emailID).subscribe(
       response => {this.searchResult = response; console.log(this.searchResult);}
@@ -83,5 +93,10 @@ export class ReaderComponentComponent implements OnInit {
     onViewClick(book:Booki)
     {
       this.bookcontent=book.content;
+    }
+    onViewClickd(book:Booki)
+    {
+      this.bookcontent="Book Deactivated by Author.";
+      alert("Book is not activated by the author.")
     }
 }

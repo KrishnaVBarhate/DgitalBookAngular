@@ -16,10 +16,10 @@ export class RegisterComponentComponent implements OnInit {
     firstName:'',
     lastName:'',
     userpassword:'',
-    roleId:'',
+    roleId:'1',
     active:true
   }
-
+  bdisplay:string='';
   constructor(private BooksSvc:BooksService) { }
 
   ngOnInit(): void {
@@ -35,10 +35,11 @@ export class RegisterComponentComponent implements OnInit {
 
 onSubmit(){
   //if(this.user.userId === ''){
+   
     this.BooksSvc.addUser(this.user)
     .subscribe(
       response => {
-        alert("Registration Successful");
+       this.bdisplay="Your profile has been created succesfully"
         this.getAllUsers();
         this.user = {
          // userId:0,

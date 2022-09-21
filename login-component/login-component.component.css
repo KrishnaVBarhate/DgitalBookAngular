@@ -2,7 +2,7 @@
 .center{
   position:absolute;
   width:780px;
-  height:650px;
+  height:430px;
   left:50%;
   top:50%;
   margin-left:-390px;
@@ -68,6 +68,16 @@ INPUT BOX CSS */
   outline:none;
 }
 
+.topcorner{
+  position:absolute;
+  top: 123px;
+  right: 40px;
+  font-size: 30px;
+  color: #046825;
+  
+  
+  font-family: Arial, Verdana, sans-serif;
+ }
 enjoy-css1{
   display: inline-block;
   -webkit-box-sizing: content-box;

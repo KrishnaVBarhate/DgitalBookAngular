@@ -4,7 +4,7 @@
   <div class="topnav">
   <a routerLink="/Home" routerLinkActive="active" ariaCurrentWhenActive="page" ><i class="fa fa-fw fa-book"></i> Digital Books</a>
   <div class="topnav-right">
-      <a routerLink="/signup" [hidden]="IsLogout" routerLinkActive="active" ariaCurrentWhenActive="page"><i class="fa fa-fw fa fa-plus-square"></i>Signup</a>   
+      <a routerLink="/signup" [hidden]="IsLogout" routerLinkActive="active" ariaCurrentWhenActive="page"><i class="fa fa-fw fa fa-plus-square"></i>Signup</a> 
       <a routerLink="/login" [hidden]="IsLogout" routerLinkActive="active" ariaCurrentWhenActive="page"><i class="fa fa-user"></i>Login</a> 
       <a routerLink="/login" [hidden]="!IsLogout" routerLinkActive="active" ariaCurrentWhenActive="page"><i class="fa fa-power-off"></i>Logout</a>   
       <a>{{userFirst}}</a>

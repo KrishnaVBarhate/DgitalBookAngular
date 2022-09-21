@@ -1,28 +1,42 @@
+<head >
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'> 
+</head>
 <body id="linear-gradient" style="height: 580px;">
-
+  <a class='topcorner'(click)="home()"  ><i class="fa fa-fw fa-user"></i>Proceed as a Guest</a>
 <div class="center" >
-  <h1>Please enter credentials.</h1>
+  <h1>Please enter credentials to Sign In.</h1>
     <div class="Signup-form">
-       <form #form="ngForm"(ngSubmit)="onSubmit()" ><!-- -->
+       <form   #form="ngForm"(ngSubmit)="onSubmit()" ><!--[formGroup]="signinForm" -->
+        <div style="color:red;" >{{bdisplay}}</div>
         <br>
         <div class="form-group">
           <label class='label-css' for="">User Name</label><br><br>
           <input class='css-input' placeholder='Enter username' type="text" name="userName" [(ngModel)]="user.userName">
+          <!-- <input type="text" id="userName" class="form-control" formControlName="usern"  placeholder="UserName"  />
+     -->
+          <div class="text-danger"style="color:red;" *ngIf="user.userName==''" >
+            Username is mandatory.
+          </div> 
         </div>
         
           <br>
          <div class="form-group">
             <label class='label-css' for="">Password</label><br><br>
             <input class='css-input' placeholder='Enter Password' type="password" name="userpassword" [(ngModel)]="user.userpassword">
+            <!-- <input type="password" id="form2Example2" class="form-control" formControlName="password"  placeholder="Password" />
+            -->
+            <div class="text-danger" style="color:red;"*ngIf="user.userpassword==''" >
+              Password is mandatory.
+            </div> 
           </div>
-          <br>
+          <br><br><br><br>
          <div class="form-group" >
-          <button class='enjoy-css'>Login</button>
-          <button class='enjoy-css'(click)="home()">Proceed as a Guest</button>
+          <button class='enjoy-css' *ngIf="user.userName!='' && user.userpassword!='' ">Login</button>
+         
         </div>
       
       </form>
-    
+     
     </div>
   
     

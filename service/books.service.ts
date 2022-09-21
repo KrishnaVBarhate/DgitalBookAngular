@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Bookk, Bookp } from '../Models/book';
 import { Book, Booki } from '../Models/bookmodel';
 import { purchase } from '../Models/purchase';
-import { User, Useri } from '../Models/user';
+import { User, Useri, Userl } from '../Models/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -96,7 +96,7 @@ getAllpurchaseall():Observable<purchase[]>{
     return this.http.get<Useri[]>(this.baseUrll+'/Userbyname?uname='+userName);
   }
 
-  userlogin(user: User):Observable<any>{
+  userlogin(user: Userl):Observable<any>{
     var request={
       userName: user.userName,
       password:user.userpassword

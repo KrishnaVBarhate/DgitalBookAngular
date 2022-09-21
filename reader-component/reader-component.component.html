@@ -12,24 +12,24 @@
 <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"  type='text/css'> 
 <h1>Welcome to the Digital Books !!!</h1>
 
-<div class="book-grid" *ngIf="booksd.length>0" >
+<div class="book-grid" *ngIf="searchResult.length>0" >
     <div class="book-row">
         <div class="book-row-details"  >
             <table class="table table-bordered">
                 <thead>
                     <th>Book Name</th>
-                    <th>Price</th>
-                    <th>Buy/Read</th>
+                    <th>Publisher</th>
+                    <th>Read</th>
                 </thead>
-                <tbody *ngFor="let book of booksd" >
+                <tbody *ngFor="let n of searchResult" >
                     
                     <tr >
-                        <td>{{ book.bookName }}</td>
-                        <td>{{ book.price }}</td>
+                        <td>{{ n.book.bookName }}</td>
+                        <td>{{ n.book.publisher }}</td>
                         <td >
-                            <div >
-                                <button class="enjoy-css" (click) = "onViewClick(book)"  >Read</button> 
-                                
+                            <div>
+                                <button class="enjoy-css"  *ngIf="n.book.active==true" (click) = "onViewClick(n.book)"  >Read</button> 
+                                <button class="enjoy-css"  *ngIf="n.book.active==false" (click) = "onViewClickd(n.book)"  >Not Available</button> 
                                 
                             </div></td>
                             
